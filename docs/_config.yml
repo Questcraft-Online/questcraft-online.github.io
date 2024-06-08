@@ -3,7 +3,7 @@
 # Change "moonrise" to your repository name
 url: "https://info.questcraft.online"
 baseurl: ""
-siteIcon: /media/android-chrome-192x192.png
+siteIcon: /media/Server_icon.jpeg
 siteYear: 2024
 siteFooterlink: /about
 showinSearchEngines: true

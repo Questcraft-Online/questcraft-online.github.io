@@ -5,14 +5,7 @@ navname: About
 
 # {{ site.serverName }}
 
-Moonrise is a simple, flexible template website for Minecraft servers.
-
-[GitHub](https://github.com/coffeebank/moonrise)
-
-
-# Terms of Use
-
-Moonrise MC is free for use [under the MIT license](https://github.com/coffeebank/moonrise).
+Questcraft.online is a Minecraft server where we have lots of fun and supports VR and much more!
 
 
 # Privacy Policy

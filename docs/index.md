@@ -6,7 +6,7 @@ navname: Home
 cellLinks:
   - cname: Server Map
     curl: map
-    cimage: media\worldmap.png
+    cimage: media/worldmap.png
 
   #- cname: Screenshots
   #  curl: screenshots
@@ -14,5 +14,5 @@ cellLinks:
 
   - cname: Donate
     curl: donate
-    cimage: media\rainingdiamonds.jpg
+    cimage: media/rainingdiamonds.jpg
 ---

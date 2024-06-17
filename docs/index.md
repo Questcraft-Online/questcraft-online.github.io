@@ -6,8 +6,7 @@ navname: Home
 cellLinks:
   - cname: Server Map
     curl: map
-    cimage: http://questcraft.online:8123/?worldname=world&mapname=flat&zoom=1&x=233&y=0&z=1#.png
-
+    cimage: "style="height:300px; width: 200px; background-image: url(http://questcraft.online:8123/?worldname=world&mapname=flat&zoom=1&x=233&y=0&z=1#.png); background-repeat: repeat;""
   #  media/worldmap.png
   #- cname: Screenshots
   #  curl: screenshots

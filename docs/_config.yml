@@ -14,7 +14,7 @@ showinSearchEngines: true
 serverName: questcraft.online
 serverDescription: A Minecraft server where we have lots of fun and supports VR and much more!
 serverIP: questcraft.online
-useBedrockForOnlineStatus: true
+useBedrockForOnlineStatus: false
 
 
 # Discord information

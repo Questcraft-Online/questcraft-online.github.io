@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questcraft Online - Gallery</title>
+    <meta name="description" content="Explore the Questcraft Online gallery featuring game screenshots, dynamic server features, and community moments.">
+    <meta name="keywords" content="Questcraft Online, Minecraft server, screenshots, game gallery, dynamic lighting, friends">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured data for images -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Questcraft Online - Gallery",
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "images/frends.jpg",
+          "name": "Friends",
+          "description": "A moment with friends on the Questcraft Online server."
+        },
+        {
+          "@type": "ImageObject",
+          "url": "images/server side dynamic light (no mods needed).mp4",
+          "name": "Server Side Dynamic Light",
+          "description": "Demonstration of server-side dynamic lighting without mods."
+        },
+        {
+          "@type": "ImageObject",
+          "url": "images/physics mod.mp4",
+          "name": "playing with physics mod",
+          "description": "playing with physics mod on questcraft.online"
+        }
+        // Add more images here as necessary
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Questcraft Online - Gallery</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="discord.html">Discord</a></li>
+                <li><a href="maps.html">Maps</a></li>
+                <li><a href="screenshots.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Gallery</h2>
+    <div class="gallery" id="gallery">
+        <div class="gallery-item">
+            <img src="favicon.ico" alt="Questcraft Online server icon and branding" title="Questcraft Online Icon">
+            <div class="item-name">questcraft.online</div>
+        </div>
+        <div class="gallery-item">
+            <video controls muted onmouseover="this.play()" onmouseout="this.pause()" title="Server Side Dynamic Lighting">
+                <source src="images/server side dynamic light (no mods needed).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="item-name">Server Side Dynamic Light</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/frends.jpg" alt="Friends enjoying the game on Questcraft Online server" title="Friends on Questcraft Online">
+            <div class="item-name">Friends</div>
+        </div>
+        <div class="gallery-item">
+            <video controls muted onmouseover="this.play()" onmouseout="this.pause()" title="playing with physics mod on questcraft.online">
+                <source src="images/physics mod.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="item-name">playing with physics mod on questcraft.online</div>
+        </div>
+        <div class="gallery-item">
+            <img src="image5.jpg" alt="Player-built structures on Questcraft Online server" title="Player-Built Structures">
+            <div class="item-name">Player Structures</div>
+        </div>
+        <!-- Add more images with detailed descriptions here -->
+    </div>
+</body>
+</html>

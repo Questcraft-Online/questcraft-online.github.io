@@ -7,6 +7,13 @@ body {
     padding: 0;
 }
 
+#logo {
+    position: absolute; /* Position logo absolutely */
+    left: 30px; /* Adjust left space */
+    width: 90px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
 /* Header Styling */
 header {
     background-color: #1f1f1f;
@@ -327,4 +334,76 @@ footer {
     margin-top: 5px; /* Space above the item name */
     font-size: 14px; /* Font size for item names */
     color: #999; /* Color for item names */
+}
+
+.hidden-tags {
+    display: none; /* Hides the tags */
+}
+.plugin-item {
+    margin: 10px 0;
+}
+
+
+#search {
+    width: 300px; /* Set the desired width */
+    padding: 10px; /* Optional: add some padding for better appearance */
+    margin-bottom: 20px; /* Optional: add some space below the input */
+    font-size: 16px; /* Optional: adjust font size */
+}
+
+#question-container a.question-link {
+    display: block;
+    margin-top: 10px;
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+#question-container a.question-link:hover {
+    text-decoration: underline;
+}
+
+#question-container p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#question-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px 5px;
+    background-color: #00bcd4;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#question-container button:hover {
+    background-color: #0288a7;
+}
+
+/* Link Styling */
+#question-container a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+#question-container a:hover {
+    text-decoration: underline;
+}
+
+/* Troubleshooter Styling */
+#troubleshooter {
+    text-align: center;
+}
+
+#question-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Support Chatbot</title>
+    <style>
+        #question-container {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            width: 300px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin-top: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="question-container"></div>
+
+<script>
+const questions = [
+    { id: 1, question: "Where is the problem?", options: [
+        { text: "Minecraft (Server)", next: 2 },
+        { text: "Minecraft (Client)", next: 28 },
+        { text: "Discord", next: null },
+        { text: "Website", next: null },
+        { text: "Other", next: null }
+    ]},
+    { id: 2, question: "What is the problem with the Minecraft server?", options: [
+        { text: "Plugin-related", next: 3 },
+        { text: "Server performance", next: 14 },
+        { text: "Connection issues", next: 15 },
+        { text: "Other", next: 7 }
+    ]},
+    // Add remaining questions here...
+];
+
+// Render questions and options
+function renderQuestion(questionId) {
+    const questionData = questions.find(q => q.id === questionId);
+    const container = document.getElementById('question-container');
+    container.innerHTML = '';  // Clear previous content
+
+    if (questionData) {
+        const questionElem = document.createElement('h3');
+        questionElem.textContent = questionData.question;
+        container.appendChild(questionElem);
+
+        questionData.options.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option.text;
+            button.onclick = () => {
+                if (option.next) {
+                    renderQuestion(option.next);
+                } else {
+                    container.innerHTML = "<h3>Thank you for your response!</h3>";
+                }
+            };
+            container.appendChild(button);
+        });
+    }
+}
+
+// Start the chatbot
+renderQuestion(1);
+</script>
+
+</body>
+</html>

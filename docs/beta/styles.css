@@ -1,26 +1,22 @@
-/* General body styling */
+/* General Styles */
 body {
-    display: flex;
-    flex-direction: column; /* Change to column layout */
-    justify-content: center;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #e0f2ff; /* Soft light blue background */
+    color: #333;
     margin: 0;
-    height: 100vh;
+    padding: 0;
 }
 
 /* Header Styling */
 header {
-    background-color: #1f1f1f;
+    background-color: #1f1f1f; /* Dark header */
     padding: 20px;
     text-align: center;
-    width: 100%; /* Full width for header */
 }
 
 header h1 {
     margin: 0;
-    color: #00bcd4;
+    color: #00bcd4; /* Cyan color for header text */
 }
 
 nav ul {
@@ -34,7 +30,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #eeeeee;
+    color: #eeeeee; /* Light gray for links */
     text-decoration: none;
 }
 
@@ -52,8 +48,7 @@ nav ul li a:hover {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s; /* Transition for the chatbot container */
-    margin-top: 20px; /* Space between header and chatbot */
+    margin: 20px auto; /* Centering the chatbot */
 }
 
 /* Chat display styling */
@@ -75,7 +70,7 @@ nav ul li a:hover {
     transition: background-color 0.3s; /* Transition for message background */
 }
 
-/* User and bot message styling */
+/* User message styling */
 #questionDisplay p strong {
     font-weight: 600;
 }

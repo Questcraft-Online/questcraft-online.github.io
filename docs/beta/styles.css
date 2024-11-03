@@ -1,12 +1,45 @@
 /* General body styling */
 body {
     display: flex;
+    flex-direction: column; /* Change to column layout */
     justify-content: center;
     align-items: center;
     font-family: 'Arial', sans-serif;
     background-color: #e0f2ff; /* Soft light blue background */
     margin: 0;
     height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Full width for header */
+}
+
+header h1 {
+    margin: 0;
+    color: #00bcd4;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Chatbot container styling */
@@ -20,6 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s; /* Transition for the chatbot container */
+    margin-top: 20px; /* Space between header and chatbot */
 }
 
 /* Chat display styling */
@@ -41,7 +75,7 @@ body {
     transition: background-color 0.3s; /* Transition for message background */
 }
 
-/* User message styling */
+/* User and bot message styling */
 #questionDisplay p strong {
     font-weight: 600;
 }
@@ -126,35 +160,4 @@ body {
     background-color: #f0f4ff; /* Very light blue for chat area */
     border-bottom: none; /* Remove border */
     max-height: 400px; /* Set a maximum height for the chat area */
-}
-
-/* Header Styling */
-header {
-    background-color: #1f1f1f;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    color: #00bcd4;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #eeeeee;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
 }

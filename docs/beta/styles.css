@@ -1,22 +1,22 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e0f2ff; /* Soft light blue background */
-    color: #333;
+    background-color: #121212;
+    color: #eeeeee;
     margin: 0;
     padding: 0;
 }
 
 /* Header Styling */
 header {
-    background-color: #1f1f1f; /* Dark header */
+    background-color: #1f1f1f;
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    color: #00bcd4; /* Cyan color for header text */
+    color: #00bcd4;
 }
 
 nav ul {
@@ -30,12 +30,20 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #eeeeee; /* Light gray for links */
+    color: #eeeeee;
     text-decoration: none;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+/* Main Section Styling */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
 }
 
 /* Chatbot container styling */

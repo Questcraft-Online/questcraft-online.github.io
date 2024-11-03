@@ -1,7 +1,7 @@
 const questions = [
     {
         id: 1,
-        question: "What issue are you experiencing?",
+        question: "Hello, What issue are you experiencing?",
         options: [
             { keywords: ["lag", "lagging", "performance", "slow"], nextQuestionId: 2 },
             { keywords: ["player count", "players", "count", ], nextQuestionId: 9 },
@@ -9,6 +9,8 @@ const questions = [
             { keywords: ["error", "message", "crash"], nextQuestionId: null },
             { keywords: ["gameplay", "feature", "bug"], nextQuestionId: null },
             { keywords: ["placeholder", "%", "%%" ], nextQuestionId: 10 },
+            { keywords: ["hello", "hi", "sigma" ], nextQuestionId: 1 }, // path done // code created by minecraft name:triggerhappy_ (questcraft.online)
+            { keywords: ["i dont know how to create a land" ], nextQuestionId: 14 },
         ]
     },
     {
@@ -81,7 +83,7 @@ const questions = [
         id: 10,
         question: "It seams like a problem with placeholder api, did you check if you used the corect placeholders? list: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders",
         options: [
-            { keywords: ["yes but its still not working", "yes i did", "not working", "yes", "yes i checked"], nextQuestionId: 11 },
+            { keywords: ["yes i did", "not working", "yes", "yes i checked"], nextQuestionId: 11 },
             { keywords: ["worked!"], nextQuestionId: 1 }, // path done
             { keywords: ["yes but its still not working"], nextQuestionId: 12 },
         ]
@@ -109,6 +111,22 @@ const questions = [
             { keywords: ["no"], nextQuestionId: null },
             { keywords: ["nvm", "worked"], nextQuestionId: 1 }, // path done
             { keywords: ["yes", "tnt", "lag"], nextQuestionId: null },
+        ]
+    },
+    {
+        id: 14,
+        question: "Are you currently on the Questcraft server ('questcraft.online'), another server with the Lands plugin, or a different Minecraft server?",
+        options: [
+            { keywords: ["im on questcraft.online", "questcraft.online", "questcraft", "questcraft online", "online"], nextQuestionId: 15 },
+            { keywords: ["nvm", "worked"], nextQuestionId: 1 }, // path done
+        ]
+    },
+    {
+        id: 15,
+        question: "you can try '/land create [name]' replace [name] with the name for your land and '/claim' to claim chunks",
+        options: [
+            { keywords: ["im on questcraft.online", "questcraft.online", "questcraft", "questcraft online", "online"], nextQuestionId: 15 },
+            { keywords: ["nvm", "worked", "yes"], nextQuestionId: 1 }, // path done
         ]
     },
 ];

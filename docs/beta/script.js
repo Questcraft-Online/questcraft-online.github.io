@@ -1,134 +1,170 @@
 const questions = [
-    { 
-        id: 1, 
-        question: "Where is the problem?", 
+    {
+        id: 1,
+        question: "What issue are you experiencing?",
         options: [
-            { keywords: ["Minecraft server"], text: "Minecraft (Server)", next: 2 }, 
-            { keywords: ["Minecraft client"], text: "Minecraft (Client)", next: null },
-            { keywords: ["Discord"], text: "Discord", next: null },
-            { keywords: ["Website"], text: "Website", next: null },
-            { keywords: ["Other"], text: "Other", next: null }
-        ] 
-    },
-    { 
-        id: 2, 
-        question: "What is the problem with the Minecraft server?", 
-        options: [
-            { keywords: ["plugin", "plugins"], text: "Plugin-related", next: 3 },
-            { keywords: ["performance", "lag"], text: "Server performance", next: 14 },
-            { keywords: ["connection"], text: "Connection issues", next: 15 },
-            { keywords: ["other"], text: "Other", next: 7 }
-        ] 
-    },
-    { 
-        id: 3, 
-        question: "What is the specific issue with the plugin?", 
-        options: [
-            { keywords: ["doesn't start", "start issue"], text: "Doesn't start", next: 8 },
-            { keywords: ["commands", "commands not working"], text: "Commands don't work", next: 11 },
-            { keywords: ["configuration", "config error"], text: "Configuration error", next: 16 },
-            { keywords: ["scoreboard", "serverlist", "tab"], text: "Something's not showing up (scoreboard, serverlist, tab)", next: 31 },
-            { keywords: ["other"], text: "Other", next: 4 }
+            { keywords: ["lag", "lagging", "performance", "slow"], nextQuestionId: 2 },
+            { keywords: ["player count", "players", "count", ], nextQuestionId: 9 },
+            { keywords: ["plugins"], nextQuestionId: null },
+            { keywords: ["error", "message", "crash"], nextQuestionId: null },
+            { keywords: ["gameplay", "feature", "bug"], nextQuestionId: null },
+            { keywords: ["placeholder", "%", "%%" ], nextQuestionId: 10 },
         ]
     },
-    { 
-        id: 4, 
-        question: "Can you identify which plugin is causing the issue?", 
+    {
+        id: 2,
+        question: "Is the lag occurring for all players or just for you?",
         options: [
-            { keywords: ["yes"], text: "Yes", next: 5 },
-            { keywords: ["no"], text: "No", next: 6 }
-        ] 
-    },
-    { 
-        id: 5, 
-        question: "Get online and run the command `/plugins`. What color indicates the plugin's status?", 
-        options: [
-            { keywords: ["red", "not running"], text: "Red (not running)", next: 8 },
-            { keywords: ["green", "running"], text: "Green (running)", next: 11 },
-            { keywords: ["yellow", "warning"], text: "Yellow (warning)", next: 17 },
-            { keywords: ["other"], text: "Other", next: 13 }
-        ] 
-    },
-    { 
-        id: 6, 
-        question: "Can you identify which plugin after reviewing the documentation linked here?", 
-        link: "#mechanics",
-        options: [
-            { keywords: ["yes"], text: "Yes", next: 5 },
-            { keywords: ["no", "unsure"], text: "No, still unsure", next: 7 }
+            { keywords: ["all", "everyone", "everyone is lagging"], nextQuestionId: 3 },
+            { keywords: ["just me", "myself", "only me", "me", "I"], nextQuestionId: null },
         ]
     },
-    { 
-        id: 7, 
-        question: "Ask a higher rank for help or create a support ticket in #create-a-ticket.", 
+    {
+        id: 3,
+        question: "Are there any recent changes to the server, such as new plugins or a higher player count?",
         options: [
-            { keywords: ["retry"], text: "Retry troubleshooting", next: 1 }
+            { keywords: ["no", "unchanged", "nothing"], nextQuestionId: 4 },
+            { keywords: ["yes"], nextQuestionId: 8 },
+            { keywords: ["player count", "players", "count", "online", "amount", "player", "player's", "playercount"], nextQuestionId: 9 }
         ]
     },
-    { 
-        id: 8, 
-        question: "It’s likely an issue with the plugin's startup sequence.", 
+    {
+        id: 4,
+        question: "are ther any problems with your memorie, storage or cpu?",
         options: [
-            { keywords: ["resolve", "fix"], text: "How can I resolve it?", next: 9 },
-            { keywords: ["not related"], text: "Not related to this issue", next: 3 },
-            { keywords: ["retry"], text: "Retry troubleshooting", next: 1 }
-        ] 
+            { keywords: ["no", "nothing"], nextQuestionId: 5 },
+            { keywords: ["yes"], nextQuestionId: 13 }
+        ]
     },
-    // ... Continue with the rest of the questions, adding keywords for each option
+    {
+        id: 5,
+        question: "are there any problems with your entety count? or is it rily high?",
+        options: [
+            { keywords: ["yes", "high", "defenedly"], nextQuestionId: 6 },
+            { keywords: ["how do i check", "check", "how do i see", "where", "?"], nextQuestionId: null },
+            { keywords: [ ], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 6,
+        question: "you likly have a problem with to many enteties in your server this can couse a lot of lag and server recorces its recomended to take a look at that",
+        options: [
+            { keywords: ["yes", "high", "defenedly", "where" ], nextQuestionId: 7 },
+            { keywords: [ ], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 7,
+        question: "are you using any multievers plugins? or plugins that allow more worlds?",
+        options: [
+            { keywords: ["yes", "" ], nextQuestionId: 8 },
+            { keywords: [ ], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 8,
+        question: "what changed?",
+        options: [
+            { keywords: ["player count", "players", "count", "online", "amount"], nextQuestionId: 9 },
+            { keywords: [ ], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 9,
+        question: "the player amount is cousing lag its recomended to upgrade your server recorces or set the player limit lower",
+        options: [
+            { keywords: ["oke", "thanks", "i will try", "reset", "done", "worked"], nextQuestionId: 1 }, // path done
+            { keywords: [ ], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 10,
+        question: "It seams like a problem with placeholder api, did you check if you used the corect placeholders? list: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders",
+        options: [
+            { keywords: ["yes but its still not working", "yes i did", "not working", "yes", "yes i checked"], nextQuestionId: 11 },
+            { keywords: ["worked!"], nextQuestionId: 1 }, // path done
+            { keywords: ["yes but its still not working"], nextQuestionId: 12 },
+        ]
+    },
+    {
+        id: 11,
+        question: "did it work?",
+        options: [
+            { keywords: ["no",], nextQuestionId: 12 },
+            { keywords: ["worked"], nextQuestionId: 1 }, // path done
+        ]
+    },
+    {
+        id: 12,
+        question: "try updating and or reinstalling the plugin, did that work?",
+        options: [
+            { keywords: ["no",], nextQuestionId: 12 },
+            { keywords: ["worked"], nextQuestionId: 1 }, // path done
+        ]
+    },
+    {
+        id: 13,
+        question: "did anything happen that could couse a lag spike? (many tnt or lag mercien)",
+        options: [
+            { keywords: ["no"], nextQuestionId: null },
+            { keywords: ["nvm", "worked"], nextQuestionId: 1 }, // path done
+            { keywords: ["yes", "tnt", "lag"], nextQuestionId: null },
+        ]
+    },
 ];
-let currentQuestionId = 1;
 
-function displayQuestion(questionId) {
-    const question = questions.find(q => q.id === questionId);
-    if (!question) return;
+let currentQuestion = questions[0];
+const questionDisplay = document.getElementById("questionDisplay");
 
-    // Display the question text
-    console.log(question.question);
+// Function to display questions
+function displayQuestion(text) {
+    const questionElement = document.createElement("p");
+    questionElement.innerHTML = `<strong>Bot:</strong> ${text}`;
+    questionDisplay.appendChild(questionElement);
+    questionDisplay.scrollTop = questionDisplay.scrollHeight; // Scroll to the bottom
+}
 
-    // Display each option
-    question.options.forEach((option, index) => {
-        console.log(`${index + 1}. ${option.text}`);
+// Function to handle user's response and find the next question based on keywords
+function handleResponse() {
+    const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+
+    if (!userInput) return;
+
+    // Display user's message
+    const userElement = document.createElement("p");
+    userElement.innerHTML = `<strong>You:</strong> ${userInput}`;
+    questionDisplay.appendChild(userElement);
+
+    // Find the next question based on keywords
+    let foundOption = null;
+    currentQuestion.options.forEach(option => {
+        option.keywords.forEach(keyword => {
+            if (userInput.includes(keyword)) {
+                foundOption = option;
+            }
+        });
     });
 
-    // If there's a link associated with the question, display it
-    if (question.link) {
-        console.log(`Link: ${question.link}`);
-    }
-}
-
-function handleResponse(userInput) {
-    const question = questions.find(q => q.id === currentQuestionId);
-
-    if (!question) {
-        console.log("Error: Question not found.");
-        return;
-    }
-
-    // Convert user input to lowercase for easier matching
-    const input = userInput.toLowerCase();
-
-    // Find the option that matches the input keywords
-    const selectedOption = question.options.find(option => 
-        option.keywords.some(keyword => input.includes(keyword))
-    );
-
-    if (selectedOption) {
-        currentQuestionId = selectedOption.next;
-        if (currentQuestionId) {
-            displayQuestion(currentQuestionId);
-        } else {
-            console.log("End of troubleshooting flow. Please consult a higher rank if unresolved.");
+    if (foundOption) {
+        if (foundOption.nextQuestionId !== null) {
+            currentQuestion = questions.find(q => q.id === foundOption.nextQuestionId);
+            displayQuestion(currentQuestion.question);
+        } else if (foundOption.link) {
+            displayQuestion(`You can find more information here: <a href="${foundOption.link}" target="_blank">${foundOption.link}</a>`);
         }
     } else {
-        console.log("Sorry, I couldn't understand your response. Please try again.");
+        displayQuestion("I'm sorry, I didn't understand that. Could you try that again in other words?");
     }
+
+    // Clear input field
+    document.getElementById("userInput").value = "";
 }
 
-// Initialize troubleshooting flow
-displayQuestion(currentQuestionId);
-
-// Example of user input handling
-document.getElementById("submitButton").onclick = () => {
-    const userInput = document.getElementById("userInput").value;
-    handleResponse(userInput);
-};
+// Initialize the first question and set up event listener
+displayQuestion(currentQuestion.question);
+document.getElementById("submitButton").addEventListener("click", handleResponse);
+document.getElementById("userInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        handleResponse();
+    }
+});

@@ -9,38 +9,6 @@ function toggleExplanation(id) {
     }
 }
 
-// maps
-
-let currentMap = 'blue'; // Default map
-
-function showMap(mapType) {
-    const blueMapIframe = document.getElementById('blueMap');
-    const dynMapIframe = document.getElementById('dynMap');
-    const blueMapButton = document.getElementById('blueMapButton');
-    const dynMapButton = document.getElementById('dynMapButton');
-
-    if (mapType === 'blue') {
-        blueMapIframe.style.display = 'block';
-        dynMapIframe.style.display = 'none';
-        currentMap = 'blue';
-        blueMapButton.classList.add('active');
-        dynMapButton.classList.remove('active');
-    } else if (mapType === 'dyn') {
-        dynMapIframe.style.display = 'block';
-        blueMapIframe.style.display = 'none';
-        currentMap = 'dyn';
-        dynMapButton.classList.add('active');
-        blueMapButton.classList.remove('active');
-    }
-}
-
-function openCurrentMapInNewTab() {
-    let mapUrl = currentMap === 'blue' 
-        ? 'http://questcraft.online:8100/#spawn:-14:102:-2:100:0:0:0:1:flat' 
-        : 'http://questcraft.online:8123';
-    window.open(mapUrl, '_blank');
-}
-
 // gallery
 
 function openModal(src) {

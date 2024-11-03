@@ -9,14 +9,27 @@ body {
 
 /* Header Styling */
 header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    position: relative;
+    height: 100px;
     background-color: #1f1f1f;
-    padding: 20px;
-    text-align: center;
+    padding: 0 20px; /* Add some padding for better spacing */
+}
+
+#logo {
+    position: absolute; /* Position logo absolutely */
+    left: 30px; /* Adjust left space */
+    width: 90px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 header h1 {
-    margin: 0;
+    margin: 0; /* Remove default margin from h1 */
     color: #00bcd4;
+    text-align: center; /* Center the title text */
+    flex-grow: 1; /* Allow the title to grow */
 }
 
 nav ul {
@@ -111,56 +124,19 @@ section p, section ul {
     font-size: 0.9em;
 }
 
-/* Link Styling */
+/* Additional Link Styling */
 #question-container a.question-link {
     display: block;
     margin-top: 10px;
     color: #00bcd4;
     text-decoration: none;
-    font-size: 0.9em;
 }
 
 #question-container a.question-link:hover {
     text-decoration: underline;
 }
 
-/* Add this to your existing styles.css file */
-
-header {
-    display: flex; /* Make the header a flex container */
-    justify-content: center; /* Center all items inside the header */
-    align-items: center; /* Align items vertically in the center */
-    position: relative; /* Set position for absolute positioning of the logo */
-    height: 100px; /* Adjust height as needed */
-}
-
-#header-container {
-    display: flex; /* Use flexbox for the container */
-    flex-grow: 1; /* Allow the container to grow */
-    align-items: center; /* Center items vertically */
-}
-
-#logo {
-    position: absolute; /* Position logo absolutely */
-    left: 30px; /* Adjust left space */
-    width: 90px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-
-h1 {
-    margin: 0; /* Remove default margin from h1 */
-    text-align: center; /* Center the title text */
-    flex-grow: 1; /* Allow the title to grow */
-}
-
-.hidden-tags {
-    display: none; /* Hides the tags */
-}
-.plugin-item {
-    margin: 10px 0;
-}
-
-
+/* Search Input Styling */
 #search {
     width: 300px; /* Set the desired width */
     padding: 10px; /* Optional: add some padding for better appearance */
@@ -168,121 +144,12 @@ h1 {
     font-size: 16px; /* Optional: adjust font size */
 }
 
-/* Chatbot container styling */
-.chatbot-container {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 15px; /* Slightly more rounded corners */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Softer shadow */
-    background: linear-gradient(145deg, #ffffff, #f7f9ff); /* Gentle gradient background */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    margin: 20px auto; /* Centering the chatbot */
+/* Hidden Tags */
+.hidden-tags {
+    display: none; /* Hides the tags */
 }
 
-/* Chat display styling */
-#questionDisplay {
-    padding: 20px;
-    flex: 1;
-    overflow-y: auto;
-    background-color: #f0f4ff; /* Very light blue for chat area */
-    border-bottom: none; /* Remove border */
-}
-
-/* Message styling */
-#questionDisplay p {
+/* Plugin Item Styling */
+.plugin-item {
     margin: 10px 0;
-    padding: 12px 18px; /* More padding for messages */
-    border-radius: 12px; /* Rounded corners for messages */
-    max-width: 70%; /* Limit message width */
-    word-wrap: break-word; /* Break long words */
-    transition: background-color 0.3s; /* Transition for message background */
-}
-
-/* User message styling */
-#questionDisplay p strong {
-    font-weight: 600;
-}
-
-/* Bot message styling */
-#questionDisplay p:nth-child(odd) {
-    background-color: #cce5ff; /* Light blue for bot messages */
-    align-self: flex-start; /* Align to the left */
-    opacity: 0; /* Start hidden */
-    animation: fadeIn 0.5s forwards; /* Fade in effect */
-}
-
-/* User message styling */
-#questionDisplay p:nth-child(even) {
-    background-color: #a6c8ff; /* Slightly darker blue for user messages */
-    align-self: flex-end; /* Align to the right */
-    opacity: 0; /* Start hidden */
-    animation: fadeIn 0.5s forwards; /* Fade in effect */
-}
-
-/* Input container styling */
-.input-container {
-    display: flex;
-    background-color: #ffffff; /* White background */
-}
-
-/* Input field styling */
-#userInput {
-    flex: 1; /* Allow input to take up available space */
-    padding: 12px; /* Padding for input */
-    font-size: 16px; /* Font size for input */
-    border: 1px solid #cce5ff; /* Light blue border for input */
-    border-radius: 10px 0 0 10px; /* Rounded corners */
-    outline: none; /* Remove outline */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transition for border color and shadow */
-}
-
-#userInput:focus {
-    border-color: #007bff; /* Change border color on focus */
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
-}
-
-/* Button styling */
-#submitButton {
-    padding: 12px 20px; /* Padding for button */
-    font-size: 16px; /* Font size for button */
-    background-color: #007bff; /* Bright blue background */
-    color: white; /* White text */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 0 10px 10px 0; /* Rounded corners */
-    transition: background-color 0.3s, transform 0.3s; /* Transition for background color and scale */
-}
-
-#submitButton:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slightly scale up on hover */
-}
-
-/* Keyframe for fade-in effect */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-    .chatbot-container {
-        width: 90%; /* Make the chatbot responsive */
-    }
-}
-
-/* Chat display styling */
-#questionDisplay {
-    padding: 20px;
-    flex: 1;
-    overflow-y: auto; /* Enable vertical scrolling */
-    background-color: #f0f4ff; /* Very light blue for chat area */
-    border-bottom: none; /* Remove border */
-    max-height: 400px; /* Set a maximum height for the chat area */
 }

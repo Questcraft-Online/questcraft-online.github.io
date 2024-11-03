@@ -8,12 +8,10 @@ const questions = [
             { text: "Minecraft (Client)", next: null },
             { text: "Discord", next: null },
             { text: "Website", next: null },
-            // code created by triggerhappy_ (questcraft.online)
             { text: "Other", next: null }
         ] 
     },
     { 
-        // code created by triggerhappy_ (questcraft.online)
         id: 2, 
         question: "What is the problem with the Minecraft server?", 
         options: [
@@ -30,14 +28,14 @@ const questions = [
             { text: "Doesn't start", next: 8 }, // path done
             { text: "Commands don't work", next: 11 }, // path done
             { text: "Configuration error", next: 16 }, // path done
-            // code created by triggerhappy_ (questcraft.online)
+            { text: "somethings not showing up (scoreboard, serverlist, tab)", next: 31 }, // path done
             { text: "Other", next: 4 } // path done
         ]
     },
     { 
         id: 4, 
         question: "Can you identify which plugin is causing the issue?", 
-        options: [// code created by triggerhappy_ (questcraft.online)
+        options: [
             { text: "Yes", next: 5 }, // path done
             { text: "No", next: 6 } // path done
         ] 
@@ -49,8 +47,7 @@ const questions = [
             { text: "Red (not running)", next: 8 }, // path done
             { text: "Green (running)", next: 11 }, // path done
             { text: "Yellow (warning)", next: 17 }, // path done
-            // code created by triggerhappy_ (questcraft.online)
-            { text: "Other", next: 7 } // path done
+            { text: "Other", next: 13 } // path done
         ] 
     },
     { 
@@ -108,7 +105,6 @@ const questions = [
         ]
     },
     { 
-        // code created by triggerhappy_ (questcraft.online)
         id: 12, 
         question: "Should the command be valid and functional?", 
         options: [
@@ -173,7 +169,7 @@ const questions = [
         options: [
             { text: "Yes, all good now!", next: 1 }, // path done
             { text: "No, still an error", next: 13 } // path done
-        ]// code created by triggerhappy_ (questcraft.online)
+        ]
     },
     { 
         id: 20, 
@@ -184,7 +180,7 @@ const questions = [
         ]
     },
     { 
-        id: 21, // code created by triggerhappy_ (questcraft.online)
+        id: 21,
         question: "The plugin needs updating. Check for the latest version online and update it. Did this solve the problem?", 
         link: "#mechanics",
         options: [
@@ -195,7 +191,6 @@ const questions = [
     { 
         id: 22, 
         question: "Look for the plugin's support group (tip use this link) Did this help?", 
-        // code created by triggerhappy_ (questcraft.online)
         link: "#mechanics",
         options: [
             { text: "No", next: 7 }, // path done
@@ -204,7 +199,6 @@ const questions = [
     },
     { 
         id: 23, 
-        // code created by triggerhappy_ (questcraft.online)
         question: "are you supost to have permision?", 
         options: [
             { text: "No", next: 1 }, // path done
@@ -213,7 +207,6 @@ const questions = [
     },
     { 
         id: 24, 
-        // code created by triggerhappy_ (questcraft.online)
         question: "go to the luckperm editor page and look if you sould have the permision", 
         options: [
             { text: "No", next: 1 }, // path done
@@ -222,7 +215,6 @@ const questions = [
     },
     { 
         id: 25, 
-        // code created by triggerhappy_ (questcraft.online)
         question: "go to the offisial paper discord server https://discord.com/invite/papermc and ask for help, did this work?", 
         options: [
             { text: "No", next: 7 }, // path done
@@ -230,21 +222,61 @@ const questions = [
         ]
     },
     { 
-        id: 26, 
-        // code created by triggerhappy_ (questcraft.online)
+        id: 26,
         question: "is it conection error with bedrock and/or console?", 
         options: [
-            { text: "No", next: 7 }, // path done
+            { text: "No", next: 29 }, // path done
             { text: "Yes", next: 27 } // path done
         ]
     },
     { 
         id: 27, 
-        // code created by triggerhappy_ (questcraft.online)
         question: "it is problebly a error with geysermc", 
         options: [
             { text: "No", next: 7 }, // path done
             { text: "Yes", next: 13 } // path done
+        ]
+    },
+    { 
+        id: 28, 
+        question: "What is the problem with the client?", 
+        options: [
+            { text: "unabel to join the server", next: 26 }, // path done
+            { text: "somethings not showing up (scoreboard, serverlist, tab)", next: 31 } // path done
+        ]
+    },
+    { 
+        id: 29, 
+        question: "are all the corect ports open java and/or bedrock?", 
+        options: [
+            { text: "yes", next: 7 }, // path done
+            { text: "no", next: 30 } // path done
+        ]
+    },
+    { 
+        id: 30, 
+        question: "open all the corect ports in all your conected modums/routers/firewall java: 25565 bedrock: 19132 did this help?", 
+        options: [
+            { text: "yes", next: 1 }, // path done
+            { text: "no", next: 7 } // path done
+        ]
+    },
+    { 
+        id: 31, 
+        question: "what is not showing up?", 
+        options: [
+            { text: "scoreboard", next: null },
+            { text: "placeholders", next: 32 }, // path done
+            { text: "playerlist", next: null },
+            { text: "serverlist", next: null } 
+        ]
+    },
+    { 
+        id: 32, 
+        question: "did you check if you used the corect placeholder? and if you installed the placeholder and restarted placeholder api? list: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders did this help?", 
+        options: [
+            { text: "yes", next: 1 }, // path done
+            { text: "no", next: 13 } // path done
         ]
     },
 ];

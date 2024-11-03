@@ -2,73 +2,168 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Support Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chat Support</title>
     <style>
-        #question-container {
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #chat-container {
+            width: 100%;
+            max-width: 500px;
+            height: 80vh;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #chat-messages {
+            flex-grow: 1;
             padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            width: 300px;
-            margin: auto;
-            font-family: Arial, sans-serif;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            max-width: 70%;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 15px;
+            line-height: 1.4;
+            font-size: 15px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .user-message {
+            background-color: #d1f5d3;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+        .bot-message {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+        #input-container {
+            padding: 15px;
+            background-color: #ffffff;
+            display: flex;
+            border-top: 1px solid #e0e0e0;
+        }
+        #user-input {
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        #user-input:focus {
+            border-color: #007bff;
         }
         button {
-            margin-top: 5px;
-            display: block;
+            margin-left: 10px;
+            padding: 10px 18px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-<div id="question-container"></div>
+<div id="chat-container">
+    <div id="chat-messages"></div>
+    <div id="input-container">
+        <input type="text" id="user-input" placeholder="Type your answer..." autocomplete="off"/>
+        <button onclick="handleUserInput()">Send</button>
+    </div>
+</div>
 
 <script>
+// Chat questions with keyword-based responses
 const questions = [
-    { id: 1, question: "Where is the problem?", options: [
-        { text: "Minecraft (Server)", next: 2 },
-        { text: "Minecraft (Client)", next: 28 },
-        { text: "Discord", next: null },
-        { text: "Website", next: null },
-        { text: "Other", next: null }
-    ]},
-    { id: 2, question: "What is the problem with the Minecraft server?", options: [
-        { text: "Plugin-related", next: 3 },
-        { text: "Server performance", next: 14 },
-        { text: "Connection issues", next: 15 },
-        { text: "Other", next: 7 }
-    ]},
-    // Add remaining questions here...
+    { id: 1, question: "Where is the problem?", next: 2 },
+    { id: 2, question: "What is the problem with the Minecraft server?", next: 3 },
+    { id: 3, question: "Is it related to plugins, server performance, or connection issues?", options: [
+        { keywords: ["plugin"], next: 4 },
+        { keywords: ["performance"], next: 5 },
+        { keywords: ["connection"], next: 6 }
+    ]}
 ];
 
-// Render questions and options
-function renderQuestion(questionId) {
-    const questionData = questions.find(q => q.id === questionId);
-    const container = document.getElementById('question-container');
-    container.innerHTML = '';  // Clear previous content
+// Display the first question
+let currentQuestionIndex = 0;
+function startChat() {
+    displayMessage(questions[currentQuestionIndex].question, 'bot');
+}
 
-    if (questionData) {
-        const questionElem = document.createElement('h3');
-        questionElem.textContent = questionData.question;
-        container.appendChild(questionElem);
+// Handle user input and trigger the next question
+function handleUserInput() {
+    const input = document.getElementById("user-input").value.trim();
+    if (!input) return;
 
-        questionData.options.forEach(option => {
-            const button = document.createElement('button');
-            button.textContent = option.text;
-            button.onclick = () => {
-                if (option.next) {
-                    renderQuestion(option.next);
-                } else {
-                    container.innerHTML = "<h3>Thank you for your response!</h3>";
-                }
-            };
-            container.appendChild(button);
+    displayMessage(input, 'user');  // Show user input
+    document.getElementById("user-input").value = '';  // Clear input field
+    processInput(input.toLowerCase());
+}
+
+// Process the input to find the next question based on keywords
+function processInput(input) {
+    const question = questions[currentQuestionIndex];
+    let nextQuestionIndex = null;
+
+    if (question.options) {
+        question.options.forEach(option => {
+            if (option.keywords.some(keyword => input.includes(keyword))) {
+                nextQuestionIndex = questions.findIndex(q => q.id === option.next);
+            }
         });
+    } else {
+        nextQuestionIndex = questions.findIndex(q => q.id === question.next);
+    }
+
+    if (nextQuestionIndex !== null) {
+        currentQuestionIndex = nextQuestionIndex;
+        displayMessage(questions[currentQuestionIndex].question, 'bot');
+    } else {
+        displayMessage("Thank you for your response!", 'bot');
     }
 }
 
-// Start the chatbot
-renderQuestion(1);
-</script>
+// Display a message in the chat
+function displayMessage(text, sender) {
+    const message = document.createElement("div");
+    message.className = `message ${sender}-message`;
+    message.textContent = text;
 
+    const chatMessages = document.getElementById("chat-messages");
+    chatMessages.appendChild(message);
+    chatMessages.scrollTop = chatMessages.scrollHeight;  // Auto-scroll to the latest message
+}
+
+// Start the chat
+startChat();
+
+</script>
 </body>
 </html>

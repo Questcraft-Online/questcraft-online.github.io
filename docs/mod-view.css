@@ -10,36 +10,33 @@ body {
 /* Header Styling */
 header {
     display: flex;
-    justify-content: space-between; /* Space between logo and nav */
+    justify-content: center; /* Center the title and space nav/logo evenly */
     align-items: center;
     position: relative;
     height: 100px;
     background-color: #1f1f1f;
-    padding: 0 20px; /* Add some padding for better spacing */
+    padding: 0 20px;
 }
 
 #logo {
-    position: absolute; /* Position logo absolutely */
-    left: 30px; /* Adjust left space */
-    width: 90px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    left: 30px;
+    width: 90px;
+    height: auto;
 }
 
 header h1 {
-    margin: 0; /* Remove default margin from h1 */
+    margin: 0;
     color: #00bcd4;
-    text-align: center; /* Center the title text */
-    flex-grow: 1; /* Allow the title to grow */
+    text-align: center;
+    flex-grow: 1;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: flex;
+    gap: 15px;
 }
 
 nav ul li a {
@@ -70,86 +67,151 @@ section p, section ul {
     color: #cccccc;
 }
 
-/* Troubleshooter Styling */
-#troubleshooter {
-    text-align: center;
-}
-
-#question-container {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #2a2a2a;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-#question-container p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-}
-
-#question-container button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    margin: 10px 5px;
-    background-color: #00bcd4;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#question-container button:hover {
-    background-color: #0288a7;
-}
-
-/* Link Styling */
-#question-container a {
-    color: #00bcd4;
-    text-decoration: none;
-    font-size: 0.9em;
-}
-
-#question-container a:hover {
-    text-decoration: underline;
-}
-
 /* Footer Styling */
 .footer {
     background-color: #1f1f1f;
-    color: #888888;
+    color: #000000;
     text-align: center;
     padding: 10px;
     font-size: 0.9em;
 }
 
-/* Additional Link Styling */
-#question-container a.question-link {
-    display: block;
-    margin-top: 10px;
-    color: #00bcd4;
-    text-decoration: none;
-}
-
-#question-container a.question-link:hover {
-    text-decoration: underline;
-}
-
 /* Search Input Styling */
 #search {
-    width: 300px; /* Set the desired width */
-    padding: 10px; /* Optional: add some padding for better appearance */
-    margin-bottom: 20px; /* Optional: add some space below the input */
-    font-size: 16px; /* Optional: adjust font size */
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
 }
 
 /* Hidden Tags */
 .hidden-tags {
-    display: none; /* Hides the tags */
+    display: none;
 }
 
-/* Plugin Item Styling */
-.plugin-item {
+/* Chatbot container styling */
+.chatbot-container {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Softer shadow for subtle blending */
+    background: rgba(20, 20, 20, 0.9); /* Very dark, slightly transparent background */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto; /* Center align with auto margin */
+}
+
+#questionDisplay {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f0f4ff;
+    max-height: 400px;
+}
+
+/* Message Styling */
+#questionDisplay p {
     margin: 10px 0;
+    padding: 12px 18px;
+    border-radius: 12px;
+    max-width: 70%;
+    word-wrap: break-word;
+    transition: background-color 0.3s;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Bot message styling */
+#questionDisplay p:nth-child(odd) {
+    background: linear-gradient(145deg, #1f1f30, #131323); /* Darker, cool gradient for bot messages */
+    color: #d0d0e0; /* Soft, light gray text */
+    border-radius: 8px;
+    padding: 10px;
+    margin: 6px 0;
+    align-self: flex-start;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* User message styling */
+#questionDisplay p:nth-child(even) {
+    background: linear-gradient(145deg, #4040b0, #2a2a3d); /* Subtle cool blue gradient for user messages */
+    color: #f0f0ff; /* Very light text color */
+    border-radius: 8px;
+    padding: 10px;
+    margin: 6px 0;
+    align-self: flex-end;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Chat display styling */
+#questionDisplay {
+    padding: 16px;
+    flex: 1;
+    overflow-y: auto;
+    background-color: rgba(18, 18, 18, 0.85); /* Slightly transparent background */
+    border-bottom: none;
+    max-height: 400px;
+    color: #dddddd; /* Light gray for text */
+    scrollbar-width: thin; /* Narrow scrollbar */
+}
+
+/* Input container styling */
+.input-container {
+    display: flex;
+    background-color: rgba(30, 30, 30, 0.9); /* Darker background */
+}
+
+/* Input field styling */
+#userInput {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #444444; /* Dark border */
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    color: #eeeeee; /* Light text */
+    background-color: rgba(25, 25, 25, 0.9); /* Dark input background */
+}
+
+
+#userInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+#submitButton {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #444444; /* Dark button */
+    color: #dddddd;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#submitButton:hover {
+    background-color: #333333;
+    transform: scale(1.05);
+}
+
+/* Keyframe for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+    .chatbot-container {
+        width: 90%;
+    }
 }

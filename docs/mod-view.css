@@ -211,9 +211,6 @@ section p, section ul {
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 600px) {
-    .chatbot-container {
-        width: 90%;
-    }
     
     /* Adjust logo size or hide it */
     #logo {

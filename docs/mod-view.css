@@ -214,4 +214,13 @@ section p, section ul {
     .chatbot-container {
         width: 90%;
     }
+    
+    /* Adjust logo size or hide it */
+    #logo {
+        width: 50px; /* Make the logo smaller */
+    }
+    
+    /* Option to hide the logo completely */
+    /* Uncomment this line to hide */
+    /* display: none; */
 }

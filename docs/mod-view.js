@@ -1,24 +1,22 @@
 const questions = [
     {
         id: 1,
-        question: "Hello, What issue are you experiencing?",
+        question: "What issue are you experiencing?",
         options: [
             { keywords: ["lag", "lagging", "performance", "slow"], nextQuestionId: 2 },
-            { keywords: ["player count", "players", "count", ], nextQuestionId: 9 },
-            { keywords: ["plugins"], nextQuestionId: null },
-            { keywords: ["error", "message", "crash"], nextQuestionId: null },
-            { keywords: ["gameplay", "feature", "bug"], nextQuestionId: null },
-            { keywords: ["placeholder", "%", "%%" ], nextQuestionId: 10 },
-            { keywords: ["hello", "hi", "sigma" ], nextQuestionId: 1 }, // path done // code created by minecraft name:triggerhappy_ (questcraft.online)
-            { keywords: ["i dont know how to create a land" ], nextQuestionId: 14 },
+            { keywords: ["player count", "players", "count"], nextQuestionId: 9 },
+            { keywords: ["plugins"], nextQuestionId: 14 },
+            { keywords: ["error", "message", "crash"], nextQuestionId: 15 },
+            { keywords: ["gameplay", "feature", "bug"], nextQuestionId: 16 },
+            { keywords: ["placeholder", "%", "%%"], nextQuestionId: 10 },
         ]
     },
     {
         id: 2,
         question: "Is the lag occurring for all players or just for you?",
         options: [
-            { keywords: ["all", "everyone", "everyone is lagging"], nextQuestionId: 3 },
-            { keywords: ["just me", "myself", "only me", "me", "I"], nextQuestionId: null },
+            { keywords: ["all", "everyone"], nextQuestionId: 3 },
+            { keywords: ["just me", "only me"], nextQuestionId: 17 },
         ]
     },
     {
@@ -27,106 +25,212 @@ const questions = [
         options: [
             { keywords: ["no", "unchanged", "nothing"], nextQuestionId: 4 },
             { keywords: ["yes"], nextQuestionId: 8 },
-            { keywords: ["player count", "players", "count", "online", "amount", "player", "player's", "playercount"], nextQuestionId: 9 }
         ]
     },
     {
         id: 4,
-        question: "are ther any problems with your memorie, storage or cpu?",
+        question: "Are there any problems with your memory, storage, or CPU?",
         options: [
-            { keywords: ["no", "nothing"], nextQuestionId: 5 },
+            { keywords: ["no"], nextQuestionId: 5 },
             { keywords: ["yes"], nextQuestionId: 13 }
         ]
     },
     {
         id: 5,
-        question: "are there any problems with your entety count? or is it rily high?",
+        question: "Are there any problems with your entity count, or is it really high?",
         options: [
-            { keywords: ["yes", "high", "defenedly"], nextQuestionId: 6 },
-            { keywords: ["how do i check", "check", "how do i see", "where", "?"], nextQuestionId: null },
-            { keywords: [ ], nextQuestionId: null }
+            { keywords: ["yes", "high", "definitely"], nextQuestionId: 6 },
+            { keywords: ["how do I check", "check"], nextQuestionId: 18 }
         ]
     },
     {
         id: 6,
-        question: "you likly have a problem with to many enteties in your server this can couse a lot of lag and server recorces its recomended to take a look at that",
+        question: "It seems there might be too many entities, which can cause lag. Have you considered reducing the entity count?",
         options: [
-            { keywords: ["yes", "high", "defenedly", "where" ], nextQuestionId: 7 },
-            { keywords: [ ], nextQuestionId: null }
+            { keywords: ["yes"], nextQuestionId: 7 },
+            { keywords: ["how"], nextQuestionId: 19 }
         ]
     },
     {
         id: 7,
-        question: "are you using any multievers plugins? or plugins that allow more worlds?",
+        question: "Are you using any plugins for multiple worlds, like Multiverse?",
         options: [
-            { keywords: ["yes", "" ], nextQuestionId: 8 },
-            { keywords: [ ], nextQuestionId: null }
+            { keywords: ["yes"], nextQuestionId: 8 },
+            { keywords: ["no"], nextQuestionId: 20 }
         ]
     },
     {
         id: 8,
-        question: "what changed?",
+        question: "What changed?",
         options: [
-            { keywords: ["player count", "players", "count", "online", "amount"], nextQuestionId: 9 },
-            { keywords: [ ], nextQuestionId: null }
+            { keywords: ["player count"], nextQuestionId: 9 },
+            { keywords: ["plugin"], nextQuestionId: 21 }
         ]
     },
     {
         id: 9,
-        question: "the player amount is cousing lag its recomended to upgrade your server recorces or set the player limit lower",
+        question: "High player counts can strain server resources. You might need to upgrade or lower the player limit.",
         options: [
-            { keywords: ["oke", "thanks", "i will try", "reset", "done", "worked"], nextQuestionId: 1 }, // path done
-            { keywords: [ ], nextQuestionId: null }
+            { keywords: ["okay", "thanks"], nextQuestionId: 1 }
         ]
     },
     {
         id: 10,
-        question: "It seams like a problem with placeholder api, did you check if you used the corect placeholders? list: https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders",
+        question: "This could be a PlaceholderAPI issue. Have you checked if you’re using the correct placeholders?",
         options: [
-            { keywords: ["yes i did", "not working", "yes", "yes i checked"], nextQuestionId: 11 },
-            { keywords: ["worked!"], nextQuestionId: 1 }, // path done
-            { keywords: ["yes but its still not working"], nextQuestionId: 12 },
+            { keywords: ["yes", "checked"], nextQuestionId: 11 },
+            { keywords: ["worked"], nextQuestionId: 1 }
         ]
     },
     {
         id: 11,
-        question: "did it work?",
+        question: "Did it work?",
         options: [
-            { keywords: ["no",], nextQuestionId: 12 },
-            { keywords: ["worked"], nextQuestionId: 1 }, // path done
+            { keywords: ["no"], nextQuestionId: 12 },
+            { keywords: ["worked"], nextQuestionId: 1 }
         ]
     },
     {
         id: 12,
-        question: "try updating and or reinstalling the plugin, did that work?",
+        question: "Try updating or reinstalling the plugin. Did that help?",
         options: [
-            { keywords: ["no",], nextQuestionId: 12 },
-            { keywords: ["worked"], nextQuestionId: 1 }, // path done
+            { keywords: ["no"], nextQuestionId: 11 },
+            { keywords: ["worked"], nextQuestionId: 1 }
         ]
     },
     {
         id: 13,
-        question: "did anything happen that could couse a lag spike? (many tnt or lag mercien)",
+        question: "Did anything happen that could cause a lag spike (like many TNT explosions)?",
         options: [
             { keywords: ["no"], nextQuestionId: null },
-            { keywords: ["nvm", "worked"], nextQuestionId: 1 }, // path done
-            { keywords: ["yes", "tnt", "lag"], nextQuestionId: null },
+            { keywords: ["yes"], nextQuestionId: 22 }
         ]
     },
     {
         id: 14,
-        question: "Are you currently on the Questcraft server ('questcraft.online'), another server with the Lands plugin, or a different Minecraft server?",
+        question: "Are all plugins up-to-date and compatible with your server version?",
         options: [
-            { keywords: ["im on questcraft.online", "questcraft.online", "questcraft", "questcraft online", "online"], nextQuestionId: 15 },
-            { keywords: ["nvm", "worked"], nextQuestionId: 1 }, // path done
+            { keywords: ["yes"], nextQuestionId: 23 },
+            { keywords: ["no"], nextQuestionId: 24 }
         ]
     },
     {
         id: 15,
-        question: "you can try '/land create [name]' replace [name] with the name for your land and '/claim' to claim chunks",
+        question: "What type of error or crash are you experiencing?",
         options: [
-            { keywords: ["im on questcraft.online", "questcraft.online", "questcraft", "questcraft online", "online"], nextQuestionId: 15 },
-            { keywords: ["nvm", "worked", "yes"], nextQuestionId: 1 }, // path done
+            { keywords: ["plugin"], nextQuestionId: 25 },
+            { keywords: ["console"], nextQuestionId: 26 }
+        ]
+    },
+    {
+        id: 16,
+        question: "What feature or gameplay aspect is causing issues?",
+        options: [
+            { keywords: ["quest", "objective"], nextQuestionId: 27 },
+            { keywords: ["combat", "PVP"], nextQuestionId: 28 }
+        ]
+    },
+    {
+        id: 17,
+        question: "If the lag is only affecting you, it might be a connection issue. Have you tried testing your network?",
+        options: [
+            { keywords: ["yes"], nextQuestionId: null },
+            { keywords: ["no"], nextQuestionId: 29 }
+        ]
+    },
+    {
+        id: 18,
+        question: "You can use commands or plugins to monitor the entity count. Would you like more information on these tools?",
+        options: [
+            { keywords: ["yes"], nextQuestionId: 30 },
+            { keywords: ["no"], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 19,
+        question: "Consider using a plugin to limit entity counts or regularly clearing entities to reduce lag.",
+        options: [
+            { keywords: ["okay", "thanks"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 20,
+        question: "Using multiple worlds can increase resource usage. You may want to limit the number of worlds if possible.",
+        options: [
+            { keywords: ["understood", "thanks"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 21,
+        question: "Some plugins might be causing conflicts. Try disabling recent additions to see if performance improves.",
+        options: [
+            { keywords: ["did that", "worked"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 22,
+        question: "Explosions like TNT can cause temporary lag spikes. Consider limiting TNT if this is a common problem.",
+        options: [
+            { keywords: ["got it", "thanks"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 23,
+        question: "Incompatible plugins can cause issues. Try disabling plugins one by one to identify any conflicts.",
+        options: [
+            { keywords: ["okay"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 24,
+        question: "Make sure plugins are updated. Old versions may not work well with newer server updates.",
+        options: [
+            { keywords: ["done", "thanks"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 25,
+        question: "Does the plugin have any dependencies that need updating as well?",
+        options: [
+            { keywords: ["yes"], nextQuestionId: 11 },
+            { keywords: ["no"], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 26,
+        question: "Console errors can provide more details. Could you provide the error message?",
+        options: [
+            { keywords: ["yes"], nextQuestionId: null },
+            { keywords: ["no"], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 27,
+        question: "Quests can sometimes get stuck. Try resetting the quest or checking for updates to your quest plugin.",
+        options: [
+            { keywords: ["thanks", "okay"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 28,
+        question: "PVP issues may be caused by settings or plugins. Have you tried adjusting PVP settings?",
+        options: [
+            { keywords: ["yes"], nextQuestionId: 11 },
+            { keywords: ["no"], nextQuestionId: null }
+        ]
+    },
+    {
+        id: 29,
+        question: "Testing your network connection could help identify if the lag is caused by a connection issue.",
+        options: [
+            { keywords: ["okay"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 30,
+        question: "There are plugins and commands to monitor entities. Consider trying them for better control over entities.",
+        options: [
+            { keywords: ["will do", "thanks"], nextQuestionId: 1 }
         ]
     },
 ];

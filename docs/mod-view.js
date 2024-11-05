@@ -94,7 +94,7 @@ const questions = [
         id: 12,
         question: "Try updating or reinstalling the plugin. Did that help?",
         options: [
-            { keywords: ["no"], nextQuestionId: 11 },
+            { keywords: ["no"], nextQuestionId: null },
             { keywords: ["worked"], nextQuestionId: 1 }
         ]
     },
@@ -231,6 +231,20 @@ const questions = [
         question: "There are plugins and commands to monitor entities. Consider trying them for better control over entities.",
         options: [
             { keywords: ["will do", "thanks"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 31,
+        question: "try finding the support group of the plugin (you can use the list below) did they/this help?",
+        options: [
+            { keywords: ["no"], nextQuestionId: 32 }
+        ]
+    },
+    {
+        id: 31,
+        question: "try asking a higher rank or help from others",
+        options: [
+            { keywords: ["oke"], nextQuestionId: 1 }
         ]
     },
 ];

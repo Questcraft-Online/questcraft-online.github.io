@@ -241,7 +241,7 @@ const questions = [
         ]
     },
     {
-        id: 31,
+        id: 32,
         question: "try asking a higher rank or help from others",
         options: [
             { keywords: ["oke"], nextQuestionId: 1 }

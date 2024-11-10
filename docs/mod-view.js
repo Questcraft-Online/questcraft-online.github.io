@@ -9,6 +9,7 @@ const questions = [
             { keywords: ["error", "message", "crash"], nextQuestionId: 15 },
             { keywords: ["gameplay", "feature", "bug"], nextQuestionId: 16 },
             { keywords: ["placeholder", "%", "%%"], nextQuestionId: 10 },
+            { keywords: ["economy", "vault", "essentialseco", "eco", "essentials eco", "ultraeconomy", "/pay", "pay"], nextQuestionId: 33 },
         ]
     },
     {
@@ -247,6 +248,52 @@ const questions = [
             { keywords: ["oke"], nextQuestionId: 1 }
         ]
     },
+    {
+        id: 33,
+        question: "Do you have Vault installed?",
+        options: [
+            { keywords: ["no"], nextQuestionId: 34 },
+            { keywords: ["yes"], nextQuestionId: 35 }
+        ]
+    },
+    {
+        id: 34,
+        question: "Vault is required for most economy plugins. Install it using the list below.",
+        options: [
+            { keywords: ["ok", "thanks"], nextQuestionId: 1 }
+        ]
+    },
+    {
+        id: 35,
+        question: "Do you have EssentialsX installed?",
+        options: [
+            { keywords: ["no"], nextQuestionId: 36 },
+            { keywords: ["yes"], nextQuestionId: 39 }
+        ]
+    },
+    {
+        id: 36,
+        question: "Do you use any other economy plugins besides Vault?",
+        options: [
+            { keywords: ["yes"], nextQuestionId: 37 },
+            { keywords: ["no"], nextQuestionId: 39 }
+        ]
+    },
+    {
+        id: 37,
+        question: "It's recommended to only use Vault and EssentialsX for economy. Consider removing others.",
+        options: [
+            { keywords: ["ok"], nextQuestionId: 35 }
+        ]
+    },
+    {
+        id: 39,
+        question: "Having Vault, EssentialsX, and other economy plugins can cause conflicts. Disable EssentialsX's economy in its config or remove the extra plugin (recommended).",
+        options: [
+            { keywords: ["ok"], nextQuestionId: 31 },
+            { keywords: ["done"], nextQuestionId: 31 }
+        ]
+    }    
 ];
 
 let currentQuestion = questions[0];

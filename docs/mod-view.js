@@ -268,7 +268,7 @@ const questions = [
         question: "Do you have EssentialsX installed?",
         options: [
             { keywords: ["no"], nextQuestionId: 36 },
-            { keywords: ["yes"], nextQuestionId: 39 }
+            { keywords: ["yes"], nextQuestionId: 40 }
         ]
     },
     {
@@ -276,7 +276,7 @@ const questions = [
         question: "Do you use any other economy plugins besides Vault?",
         options: [
             { keywords: ["yes"], nextQuestionId: 37 },
-            { keywords: ["no"], nextQuestionId: 39 }
+            { keywords: ["no"], nextQuestionId: 40 }
         ]
     },
     {
@@ -292,6 +292,14 @@ const questions = [
         options: [
             { keywords: ["ok"], nextQuestionId: 31 },
             { keywords: ["done"], nextQuestionId: 31 }
+        ]
+    },
+    {
+        id: 40,
+        question: "do you have other economys bisides vault and essentialsx?",
+        options: [
+            { keywords: ["yes"], nextQuestionId: 39 },
+            { keywords: ["no"], nextQuestionId: 31 }
         ]
     }    
 ];

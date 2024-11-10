@@ -472,3 +472,42 @@ document.getElementById('search').addEventListener('input', filterPlugins);
 
 // Call the function to generate the plugin list on page load
 generatePluginList();
+
+// Webhook URL for Discord
+const webhookUrl = "https://discord.com/api/webhooks/1305211031043309578/d-f0ZijlKKmvhTPxuEZc8DR2LGCIJOHA89awJxDniHcT9A5jx2ySg9nsrzKxof1dedab";
+
+// Function to send a suggestion to the webhook
+function sendSuggestion() {
+    const suggestionInput = document.getElementById("suggestionInput");
+    const suggestionText = suggestionInput.value.trim();
+
+    if (suggestionText === "") {
+        alert("Please enter a suggestion before submitting.");
+        return;
+    }
+
+    // Payload for the webhook
+    const payload = JSON.stringify({ content: suggestionText });
+
+    // Sending POST request to the webhook
+    fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("Suggestion sent successfully!");
+            suggestionInput.value = ""; // Clear the input field
+        } else {
+            alert("Failed to send suggestion. Please try again.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("There was an error sending the suggestion.");
+    });
+}
+
+// Attach event listener to the "Submit Suggestion" button
+document.getElementById("suggestionButton").addEventListener("click", sendSuggestion);

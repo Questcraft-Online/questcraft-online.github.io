@@ -222,51 +222,71 @@ section p, section ul {
     /* display: none; */
 }
 
+/* Suggestion Box Styling */
+#suggestionContainer {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto; /* Center align the suggestion box */
+    padding: 20px;
+    background: rgba(20, 20, 20, 0.9); /* Dark, slightly transparent background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    display: flex;
+    flex-direction: column;
+}
+
 /* Styling for the suggestion input field */
 #suggestionInput {
-    width: 80%;
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #eeeeee; /* Light text */
+    background-color: rgba(25, 25, 25, 0.9); /* Dark input background */
+    border: 1px solid #444444;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    outline: none;
     transition: border-color 0.3s ease;
 }
 
 #suggestionInput:focus {
-    border-color: #0078D7; /* Highlight on focus */
-    outline: none;
+    border-color: #007bff; /* Highlight on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
 
-/* Styling for the submit button */
+/* Styling for the suggestion submit button */
 #suggestionButton {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 1em;
-    color: #fff;
-    background-color: #0078D7; /* Button color */
+    color: #dddddd;
+    background-color: #444444; /* Dark button color */
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s;
 }
 
 #suggestionButton:hover {
-    background-color: #005bb5; /* Darker shade on hover */
+    background-color: #333333; /* Slightly darker on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
 }
 
 #suggestionButton:active {
-    background-color: #003f7f; /* Even darker shade on click */
+    background-color: #222222; /* Darker shade on click */
 }
 
 /* Mobile-friendly adjustments */
 @media (max-width: 600px) {
-    #suggestionInput {
+    #suggestionContainer {
+        padding: 16px;
+    }
+
+    #suggestionInput, #suggestionButton {
         width: 100%;
     }
 
     #suggestionButton {
-        width: 100%;
         margin-top: 10px;
     }
 }

@@ -26,6 +26,7 @@ const questions = [
         options: [
             { keywords: ["no", "unchanged", "nothing"], nextQuestionId: 4 },
             { keywords: ["yes"], nextQuestionId: 8 },
+            { keywords: ["player count", "player", "playercount"], nextQuestionId: 9 },
         ]
     },
     {
@@ -64,7 +65,7 @@ const questions = [
         id: 8,
         question: "What changed?",
         options: [
-            { keywords: ["player count"], nextQuestionId: 9 },
+            { keywords: ["player count", "player", "playercount"], nextQuestionId: 9 },
             { keywords: ["plugin"], nextQuestionId: 21 }
         ]
     },
@@ -275,7 +276,7 @@ const questions = [
         id: 36,
         question: "Do you use any other economy plugins besides Vault?",
         options: [
-            { keywords: ["yes"], nextQuestionId: 37 },
+            { keywords: ["yes", "Ultraeconomy", "ultraeco", "eco", "economy", "ultra economy"], nextQuestionId: 37 },
             { keywords: ["no"], nextQuestionId: 40 }
         ]
     },

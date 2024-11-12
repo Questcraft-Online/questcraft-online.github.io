@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triggerhappy_ - Portfolio</title>
+    <link rel="stylesheet" href="me.css">
+</head>
+<body>
+<!-- Top Section with Dots -->
+    <div class="top-bar">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <h1 class="title">Triggerhappy_</h1>
+    </div>
+
+    <div class="left-sidebar">
+        <div class="skills-section">
+            <h2>Skills</h2>
+            <button class="skill-btn" onclick="showText('website')">Websites</button>
+            <button class="skill-btn" onclick="showText('java')">Java</button>
+        </div>
+        <div class="goals-section">
+            <h2>Goals</h2>
+            <button class="goal-btn" onclick="showText('learn-phyton')">Learn Python</button>
+            <button class="goal-btn" onclick="showText('learn-java')">Learn Java Better</button>
+        </div>
+    </div>
+    
+<!-- Profile Card -->
+<div class="profile-card">
+    <div class="profile-image-container">
+        <img src="your-profile.jpg" alt="Profile Picture" class="profile-image">
+    </div>
+    <div class="profile-text">
+        <h2>About Me</h2>
+        <p>Hello! I'm Triggerhappy_, a passionate developer who enjoys creating websites, apps, and plugins. I’m always looking to improve my skills and explore new programming languages!</p>
+    </div>
+</div>
+
+<!-- Dark/Light Mode Card (Separate but under profile card) -->
+<div class="mode-card">
+    <div class="mode-switch-container">
+        <label class="switch">
+            <input type="checkbox" id="mode-toggle" onclick="toggleMode()">
+            <span class="slider"></span>
+        </label>
+        <span>Dark/light</span>
+    </div>
+</div>   
+
+<!-- Skills Card -->
+<div class="skills-card">
+    <h2>Skills</h2>
+    <p>HTML, CSS, JavaScript, Java, Python - My expertise in web development and programming</p>
+    <ul>
+        <li>Web development: HTML, CSS, JS</li>
+        <li>Programming languages: Java, Python</li>
+        <li>Experience in creating applications and plugins</li>
+    </ul>
+</div>
+
+<div class="contact-card">
+    <h2>contact</h2>
+    <ul>
+        <li>discord:<br>_triggerhappy__</li>
+        <li>number:<br>+31 6 10324307</li>
+        <li>gmail:<br>triggerhappy072<br>@gmail.com</li>
+    </ul>
+</div>
+
+<!-- Skills Proficiency Card -->
+<div class="skills-proficiency-card">
+    <div class="skills-grid">
+        <!-- Skill Card 1 -->
+        <div class="skill-card">
+            <h4>CSS</h4>
+            <p>Styling web pages for an attractive layout.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%;"></div>
+            </div>
+            <span>~80%</span>
+        </div>
+        
+        <!-- Skill Card 2 -->
+        <div class="skill-card">
+            <h4>HTML</h4>
+            <p>Structuring web pages and content.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%;"></div>
+            </div>
+            <span>~70%</span>
+        </div>
+        
+        <!-- Skill Card 3 -->
+        <div class="skill-card">
+            <h4>Binary</h4>
+            <p>count/Talking in binary.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%;"></div>
+            </div>
+            <span>~60%</span>
+        </div>
+        
+        <!-- Skill Card 4 -->
+        <div class="skill-card">
+            <h4>JavaScript</h4>
+            <p>Adding interactivity to web pages.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 25%;"></div>
+            </div>
+            <span>~25%</span>
+        </div>
+        
+        <!-- Skill Card 5 -->
+        <div class="skill-card">
+            <h4>Java</h4>
+            <p>Building backend applications and software.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 15%;"></div>
+            </div>
+            <span>~15%</span>
+        </div>
+        
+        <!-- Skill Card 6 -->
+        <div class="skill-card">
+            <h4>Python</h4>
+            <p>Data analysis and scripting.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 5%;"></div>
+            </div>
+            <span>~5%</span>
+        </div>
+    </div>
+</div>
+
+    <script src="me.js"></script>
+</body>
+</html>

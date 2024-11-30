@@ -207,28 +207,28 @@ footer {
 }
 
 .gallery-item {
-    text-align: center; /* Center-aligns content */
+    text-align: center;
 }
 
 .gallery img, .gallery video {
-    width: 400px; /* Set a small width */
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.2s; /* Smooth transition for hover effect */
+    width: 400px;
+    height: auto;
+    transition: transform 0.2s; 
 }
 
 .gallery img:hover, .gallery video:hover {
-    transform: scale(1.05); /* Slight enlargement on hover */
-    cursor: pointer; /* Change cursor to indicate clickable items */
+    transform: scale(1.05); 
+    cursor: pointer; 
 }
 
 .item-name {
-    margin-top: 5px; /* Space above the item name */
-    font-size: 14px; /* Font size for item names */
-    color: #999; /* Color for item names */
+    margin-top: 5px; 
+    font-size: 14px; 
+    color: #999;
 }
 
 .hidden-tags {
-    display: none; /* Hides the tags */
+    display: none;
 }
 .plugin-item {
     margin: 10px 0;

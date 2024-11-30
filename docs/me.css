@@ -294,12 +294,10 @@ body.dark-mode {
     color: #eee;
 }
 
-/* Profile and mode cards - general */
 .profile-card, .mode-card, .left-sidebar, .skills-card, .contact-card, .skills-proficiency-card {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Dark mode card styles */
 body.dark-mode .profile-card,
 body.dark-mode .mode-card,
 body.dark-mode .left-sidebar,
@@ -310,7 +308,6 @@ body.dark-mode .skills-proficiency-card {
     color: #eee;
 }
 
-/* Light mode card styles */
 body.light-mode .profile-card,
 body.light-mode .mode-card,
 body.light-mode .left-sidebar,
@@ -322,7 +319,6 @@ body.light-mode .skills-proficiency-card {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Other button and interaction styles */
 body.light-mode .skill-btn, body.light-mode .goal-btn {
     background-color: #e0e0e0;
     color: #333;

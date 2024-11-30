@@ -7,11 +7,9 @@ function toggleMode() {
     const skillsCard = document.querySelector('.skills-card');
 
     if (document.getElementById('mode-toggle').checked) {
-        // Dark mode
         body.classList.add('dark-mode');
         body.classList.remove('light-mode');
     } else {
-        // Light mode
         body.classList.add('light-mode');
         body.classList.remove('dark-mode');
     }

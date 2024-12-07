@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Day Countdown for Minecraft Server</title>
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+}
+
+.countdown-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    width: 90%;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00bcd4;
+}
+
+.countdown {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    width: 100px; /* Increased width */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow if any */
+}
+
+.time-unit:hover {
+    transform: scale(1.05);
+}
+
+.time-unit span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.label {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.countdown-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.countdown-message h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: #00bcd4;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .time-unit {
+        width: 90px;
+        padding: 15px;
+    }
+
+    .time-unit span {
+        font-size: 1.8rem;
+    }
+
+    .label {
+        font-size: 0.9rem;
+    }
+
+    .countdown-message {
+        font-size: 1rem;
+    }
+
+    .countdown-message h1 {
+        font-size: 1.8rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="countdown-container">
+        <h1>Minecraft Server opening in:</h1>
+        <div class="countdown">
+            <div class="time-unit" id="days">
+                <span id="days-value">30</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="time-unit" id="hours">
+                <span id="hours-value">0</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="time-unit" id="minutes">
+                <span id="minutes-value">0</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="time-unit" id="seconds">
+                <span id="seconds-value">0</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+        <div class="countdown-message">
+            Get ready to join the adventure once again!
+            <br>
+            <h1>Questcraft.online</h1>
+        </div>
+    </div>
+
+    <script>
+        // Set the target date to January 8, 2025, at 7:00 PM (19:00)
+        const targetDate = new Date('January 8, 2025 19:00:00 GMT+1');
+
+        // Function to update the countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const timeRemaining = targetDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            // Update the HTML with the remaining time
+            document.getElementById('days-value').textContent = days;
+            document.getElementById('hours-value').textContent = hours;
+            document.getElementById('minutes-value').textContent = minutes;
+            document.getElementById('seconds-value').textContent = seconds;
+
+            // If the countdown is finished
+            if (timeRemaining < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown-message').textContent = 'The server is now open!';
+            }
+        }
+
+        // Update the countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();  // Call once to initialize immediately
+    </script>
+</body>
+</html>

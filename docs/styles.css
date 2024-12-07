@@ -38,7 +38,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Main Section Styling */
 section {
     padding: 20px;
     margin: 20px;
@@ -53,13 +52,12 @@ section {
     padding: 10px;
 }
 
-/* Discord Widget Styling */
 .widget-container {
     position: relative;
     width: 100%;
-    max-width: 700px; /* Limit width on larger screens */
+    max-width: 700px; 
     margin: 0 auto;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
+    padding-top: 56.25%; 
     overflow: hidden;
 }
 
@@ -71,7 +69,6 @@ section {
     height: 100%;
 }
 
-/* Join Discord Button Styling */
 .join-discord-button {
     text-align: center;
     margin-top: 15px;

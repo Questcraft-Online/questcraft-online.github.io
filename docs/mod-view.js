@@ -348,11 +348,9 @@ function handleResponse() {
         displayQuestion("I'm sorry, I didn't understand that. Could you try that again in other words?");
     }
 
-    // Clear input field
     document.getElementById("userInput").value = "";
 }
 
-// Initialize the first question and set up event listener
 displayQuestion(currentQuestion.question);
 document.getElementById("submitButton").addEventListener("click", handleResponse);
 document.getElementById("userInput").addEventListener("keydown", function(event) {
@@ -363,58 +361,54 @@ document.getElementById("userInput").addEventListener("keydown", function(event)
 
 
 // code created by triggerhappy_ (questcraft.online)
-// Plugin data
 const plugins = [
-    { name: "Crash players", file: "PlayerCrasher-3.0.1.jar", tags: ["Crasher", "Player", "/crash", "crash"], discordLink: "https://discord.com/invite/9kZzNb53FK", downloadLink: "https://modrinth.com/plugin/playercrasher" },
-    { name: "Filter chat", file: "ChatFilter.jar", tags: ["Filter", "Chat", "cursing"], discordLink: "https://discord.gg/yv3GsyDUpH", downloadLink: "https://www.spigotmc.org/resources/chatfilter-chat-signs-books-and-anvils.81652/" },
+    { name: "Advanced Inventory Spy", file: "AdvancedSpyInventory-2.4.6.jar", tags: ["inventory", "spy", "advanced", "monitoring"] },
+    { name: "Animated Scoreboard", file: "AnimatedScoreboard.jar", tags: ["scoreboard", "animated", "display", "score"] },
+    { name: "Auction House", file: "AuctionHouse-1.20.4-3.7.1.jar", tags: ["auction", "house", "market", "economy", "ah", "/ah", "/sell", "sell", "/buy", "buy"] },
     { name: "Bedrock support", file: "Geyser-Spigot.jar", tags: ["Spigot", "Geyser", "bedrock", "bugrock"], discordLink: "https://discord.gg/GeyserMC", downloadLink: "https://geysermc.org/download" },
-    { name: "Versions support auto updater", file: "AutoViaUpdater-8.5.jar", tags: ["Via", "Auto", "Updater"], downloadLink: "https://www.spigotmc.org/resources/autoviaupdater.109331/" },
-    { name: "Website hoster", file: "SimpleWebsite-1.0.0.jar", tags: ["Website", "Simple", "host", "online"], discordLink: "https://discord.com/invite/JYFU5TkTRT", downloadLink: "https://www.spigotmc.org/resources/simplewebsite-free.112766/" },
-    { name: "Permission", file: "LuckPerms-Bukkit-5.4.145.jar", tags: ["permission", "Luck", "/lp", "/luckperms"] },
-    { name: "Online 3D map", file: "bluemap-5.4-paper.jar", tags: ["Map", "Blue", "/Blue", "website", "online"] },
-    // code created by triggerhappy_ (questcraft.online)
-    { name: "Server List", file: "AdvancedServerList-Paper-5.0.5.jar", tags: ["server", "list", "appearance", "paper", "plugin"] },
-    { name: "Crazy Crates", file: "CrazyCrates-4.0.3.jar", tags: ["crates", "items", "crazy", "reward", "plugin"] },
-    { name: "Advanced Inventory Spy", file: "AdvancedSpyInventory-2.4.6.jar", tags: ["inventory", "spy", "advanced", "plugin", "monitoring"] },
-    { name: "Animated Scoreboard", file: "AnimatedScoreboard.jar", tags: ["scoreboard", "animated", "display", "plugin", "score"] },
-    { name: "Auction House", file: "AuctionHouse-1.20.4-3.7.1.jar", tags: ["auction", "house", "market", "plugin", "economy", "ah", "/ah", "/sell", "sell", "/buy", "buy"] },
-    { name: "Packet Events", file: "packetevents-spigot-2.5.0.jar", tags: ["packet", "events", "network"] },
+    { name: "Better GUI", file: "bettergui-10.2-shaded.jar", tags: ["GUI", "menu", "interface"] },
+    { name: "Bug Reports", file: "BugReports-0.12.4-latest.jar", tags: ["bug", "report", "issue"] },
+    { name: "Chest Shop", file: "ChestShop-1.1.jar", tags: ["shop", "economy", "items"] },
+    { name: "Citizens", file: "Citizens-2.0.36-b3621.jar", tags: ["NPC", "citizens"] },
+    { name: "Crash players", file: "PlayerCrasher-3.0.1.jar", tags: ["Crasher", "Player", "/crash", "crash"], discordLink: "https://discord.com/invite/9kZzNb53FK", downloadLink: "https://modrinth.com/plugin/playercrasher" },
+    { name: "Crazy Crates", file: "CrazyCrates-4.0.3.jar", tags: ["crates", "items", "crazy", "reward"] },
+    { name: "Discord Chat Addon", file: "InteractiveChatDiscordSrvAddon-4.2.12.0.jar", tags: ["Discord", "Chat", "integration", "addon"] },
+    { name: "Discord SRV", file: "DiscordSRV-Build-1.28.0.jar", tags: ["Discord", "chat", "srv", "integration", "bot", "/link", "voice chat", "vc", "voicechat"] },
+    { name: "Dynmap", file: "Dynmap-3.7-beta-7-spigot.jar", tags: ["map", "web", "dynamic", "website", "online"] },
+    { name: "Essentials Spawn", file: "EssentialsXSpawn-2.21.0-dev+121-f7a8f86.jar", tags: ["spawn", "essentials", "teleport"] },
+    { name: "Essentials", file: "EssentialsX-2.21.0-dev+121-f7a8f86.jar", tags: ["essentials", "core", "commands"] },
+    { name: "Filter chat", file: "ChatFilter.jar", tags: ["Filter", "Chat", "cursing"], discordLink: "https://discord.gg/yv3GsyDUpH", downloadLink: "https://www.spigotmc.org/resources/chatfilter-chat-signs-books-and-anvils.81652/" },
+    { name: "Floodgate", file: "floodgate-spigot.jar", tags: ["Floodgate", "bedrock", "support", "geyser", "Extensions"] },
+    { name: "Graves", file: "AxGraves-1.14.6.jar", tags: ["graves", "death", "items", "recovery", "ax"] },
+    { name: "GSit", file: "GSit-1.10.0.jar", tags: ["sit", "emote", "animation", "/sit", "/crawl", "crawl"] },
+    { name: "Interactive Chat", file: "InteractiveChat-4.2.12.0.jar", tags: ["chat", "interactive"] },
+    { name: "Lands", file: "Lands-7.10.0.jar", tags: ["land", "claim", "protection"] },
+    { name: "MC Dashboard", file: "MCDash-1.1.7.jar", tags: ["dashboard", "monitoring", "admin", "website", "online", "7867", ":7867"] },
+    { name: "mcMMO", file: "mcMMO.jar", tags: ["mcMMO", "skills", "RPG", "minecraft", "minecraftmmo"] },
     { name: "Multiverse Core", file: "multiverse-core-4.3.13.jar", tags: ["multiverse", "world", "core", "teleport", "mv", "mvc"] },
     { name: "Multiverse Inventories", file: "multiverse-inventories-4.2.7-pre.jar", tags: ["multiverse", "inventories", "world", "items", "mvi", "multiversi"] },
-    { name: "Better GUI", file: "bettergui-10.2-shaded.jar", tags: ["GUI", "menu", "interface", "plugin"] },
-    { name: "Discord Chat Addon", file: "InteractiveChatDiscordSrvAddon-4.2.12.0.jar", tags: ["Discord", "Chat", "integration", "addon"] },
-    { name: "Floodgate", file: "floodgate-spigot.jar", tags: ["Floodgate", "bedrock", "support", "geyser", "Extensions"] },
-    { name: "Void World Generator", file: "VoidWorldGenerator-1.1.4.jar", tags: ["void", "world", "generator"] },
-    { name: "Via Version", file: "ViaVersion.jar", tags: ["version", "compatibility", "Via", "ViaVersion", "new"] },
-    { name: "Via Backwards", file: "ViaBackwards.jar", tags: ["version", "compatibility", "Via", "Backwards", "ViaBackwards", "old"] },
-    { name: "Vault", file: "Vault.jar", tags: ["economy", "permissions", "API", "money"] },
     { name: "Multiverse Portals", file: "multiverse-portals-4.2.3.jar", tags: ["multiverse", "portals", "teleport", "mvp", "multivers p"] },
-    { name: "Graves", file: "AxGraves-1.14.6.jar", tags: ["graves", "death", "items", "recovery", "ax"] },
-    { name: "Dynmap", file: "Dynmap-3.7-beta-7-spigot.jar", tags: ["map", "web", "dynamic", "plugin", "website", "online"] },
-    { name: "Discord SRV", file: "DiscordSRV-Build-1.28.0.jar", tags: ["Discord", "chat", "srv", "integration", "bot", "/link", "voice chat", "vc", "voicechat"] },
-    { name: "Essentials Spawn", file: "EssentialsXSpawn-2.21.0-dev+121-f7a8f86.jar", tags: ["spawn", "essentials", "teleport"] },
+    { name: "Online 3D map", file: "bluemap-5.4-paper.jar", tags: ["Map", "Blue", "/Blue", "website", "online"] },
+    { name: "Packet Events", file: "packetevents-spigot-2.5.0.jar", tags: ["packet", "events", "network"] },
+    { name: "Permission", file: "LuckPerms-Bukkit-5.4.145.jar", tags: ["permission", "Luck", "/lp", "/luckperms"] },
+    { name: "Placeholder", file: "Placeholderapi", tags: ["api", "Placeholder api", "Placeholder", "%", "%%"] },
+    { name: "Plan", file: "Plan-5.6-build-2883.jar", tags: ["analytics", "plan", "data", "website", "8804", ":8804"] },
+    { name: "Server List", file: "AdvancedServerList-Paper-5.0.5.jar", tags: ["server", "list", "appearance", "paper"] },
+    { name: "Ultra Economy", file: "UltraEconomy-2.10.1.jar", tags: ["economy", "money"] },
+    { name: "Vault", file: "Vault.jar", tags: ["economy", "permissions", "API", "money"] },
+    { name: "Versions support auto updater", file: "AutoViaUpdater-8.5.jar", tags: ["Via", "Auto", "Updater"], downloadLink: "https://www.spigotmc.org/resources/autoviaupdater.109331/" },
+    { name: "Via Backwards", file: "ViaBackwards.jar", tags: ["version", "compatibility", "Via", "Backwards", "ViaBackwards", "old"] },
+    { name: "Via Rewind Legacy", file: "ViaRewind Legacy Support.jar", tags: ["legacy", "support", "Via", "old", "super old"] },
+    { name: "Via Rewind", file: "ViaRewind.jar", tags: ["rewind", "backward", "compatibility", "old", "super old"] },
+    { name: "Via Version", file: "ViaVersion.jar", tags: ["version", "compatibility", "Via", "ViaVersion", "new"] },
+    { name: "Vivecraft Extensions", file: "Vivecraft_Spigot_Extensions.jar", tags: ["Vivecraft", "VR", "extensions"] },
+    { name: "Voice Chat", file: "voicechat-bukkit-2.5.25.jar", tags: ["voice", "chat", "vc", "voicechat", "voice chat"] },
+    { name: "Void World Generator", file: "VoidWorldGenerator-1.1.4.jar", tags: ["void", "world", "generator"] },
     { name: "Vulcan Plan Addon", file: "VulcanPlanAddon-v1.0.1.jar", tags: ["Vulcan", "plan", "addon", "website", "Extensions"] },
+    { name: "Vulcan", file: "Vulcan-2.9.1.jar", tags: ["Vulcan", "protection", "cheat"], discordLink: "https://discord.com/invite/SCNuwUG", downloadLink: "https://www.spigotmc.org/resources/vulcan-anti-cheat-advanced-cheat-detection-1-7-1-21.83626/" },
+    { name: "Website hoster", file: "SimpleWebsite-1.0.0.jar", tags: ["Website", "Simple", "host", "online"], discordLink: "https://discord.com/invite/JYFU5TkTRT", downloadLink: "https://www.spigotmc.org/resources/simplewebsite-free.112766/" },
     { name: "World Guard", file: "worldguard-bukkit-7.0.11-dist.jar", tags: ["world", "guard", "protection"] },
     { name: "WorldEdit", file: "worldedit-bukkit-7.3.8.jar", tags: ["world", "edit", "//wand", "//", "world edit"] },
-    { name: "Via Rewind", file: "ViaRewind.jar", tags: ["rewind", "backward", "compatibility", "old", "super old"] },
-    { name: "Vivecraft Extensions", file: "Vivecraft_Spigot_Extensions.jar", tags: ["Vivecraft", "VR", "extensions"] },
-    // code created by triggerhappy_ (questcraft.online)
-    { name: "Interactive Chat", file: "InteractiveChat-4.2.12.0.jar", tags: ["chat", "interactive", "plugin"] },
-    { name: "Via Rewind Legacy", file: "ViaRewind Legacy Support.jar", tags: ["legacy", "support", "Via", "old", "super old"] },
-    { name: "Vulcan", file: "Vulcan-2.9.1.jar", tags: ["Vulcan", "protection", "cheat"], discordLink: "https://discord.com/invite/SCNuwUG", downloadLink: "https://www.spigotmc.org/resources/vulcan-anti-cheat-advanced-cheat-detection-1-7-1-21.83626/" },
-    { name: "Lands", file: "Lands-7.10.0.jar", tags: ["land", "claim", "protection"] },
-    { name: "Voice Chat", file: "voicechat-bukkit-2.5.25.jar", tags: ["voice", "chat", "vc", "voicechat", "voice chat"] },
-    { name: "Essentials", file: "EssentialsX-2.21.0-dev+121-f7a8f86.jar", tags: ["essentials", "core", "plugin", "commands"] },
-    { name: "Citizens", file: "Citizens-2.0.36-b3621.jar", tags: ["NPC", "citizens", "plugin"] },
-    { name: "mcMMO", file: "mcMMO.jar", tags: ["mcMMO", "skills", "RPG", "minecraft", "minecraftmmo"] },
-    // code created by triggerhappy_ (questcraft.online)
-    { name: "Ultra Economy", file: "UltraEconomy-2.10.1.jar", tags: ["economy", "plugin", "money"] },
-    { name: "GSit", file: "GSit-1.10.0.jar", tags: ["sit", "emote", "animation", "/sit", "/crawl", "crawl"] },
-    { name: "Bug Reports", file: "BugReports-0.12.4-latest.jar", tags: ["bug", "report", "issue"] },
-    { name: "MC Dashboard", file: "MCDash-1.1.7.jar", tags: ["dashboard", "monitoring", "admin", "website", "online", "7867", ":7867"] },
-    { name: "Plan", file: "Plan-5.6-build-2883.jar", tags: ["analytics", "plan", "data", "website", "8804", ":8804"] },
-    { name: "Chest Shop", file: "ChestShop-1.1.jar", tags: ["shop", "economy", "items"] },
-    { name: "Placeholder", file: "Placeholderapi", tags: ["api", "Placeholder api", "Placeholder", "%", "%%"] },
 ];
 
 // Function to generate the plugin list

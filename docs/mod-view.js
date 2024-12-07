@@ -401,7 +401,7 @@ const plugins = [
     // code created by triggerhappy_ (questcraft.online)
     { name: "Interactive Chat", file: "InteractiveChat-4.2.12.0.jar", tags: ["chat", "interactive", "plugin"] },
     { name: "Via Rewind Legacy", file: "ViaRewind Legacy Support.jar", tags: ["legacy", "support", "Via", "old", "super old"] },
-    { name: "Vulcan", file: "Vulcan-2.9.1.jar", tags: ["Vulcan", "protection", "cheat"] },
+    { name: "Vulcan", file: "Vulcan-2.9.1.jar", tags: ["Vulcan", "protection", "cheat"], discordLink: "https://discord.com/invite/SCNuwUG", downloadLink: "https://www.spigotmc.org/resources/vulcan-anti-cheat-advanced-cheat-detection-1-7-1-21.83626/" },
     { name: "Lands", file: "Lands-7.10.0.jar", tags: ["land", "claim", "protection"] },
     { name: "Voice Chat", file: "voicechat-bukkit-2.5.25.jar", tags: ["voice", "chat", "vc", "voicechat", "voice chat"] },
     { name: "Essentials", file: "EssentialsX-2.21.0-dev+121-f7a8f86.jar", tags: ["essentials", "core", "plugin", "commands"] },
